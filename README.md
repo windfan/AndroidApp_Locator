@@ -4,6 +4,8 @@ This project includes Android App development.
 Dropbox Folder: Final Presentation, ScreenShot from final deveplopment.
 https://www.dropbox.com/sh/qrxw1bjttbts24i/AABJtNmkJE4vooarrTfa9cNfa?dl=0
 
+Video Demo: https://youtu.be/4zqGQkU_Ha0
+
 • Figuring out an unique idea
 
 • Finding out the target customers
