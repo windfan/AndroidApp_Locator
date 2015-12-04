@@ -22,7 +22,6 @@ public class DBAdapter {
 	public static final int COL_ROWID = 0;
 
 	// TODO: Setup your fields here:
-//	public final static String EVENT_TABLE="Events";	 // name of table
 	
 	public final static String YEAR="year";				//event year
 	public final static String MONTH="month";			//event month
@@ -79,17 +78,7 @@ public class DBAdapter {
 	private static final String DATABASE_CREATE_SQL = 
 			"create table " + DATABASE_TABLE 
 			+ " (" + KEY_ROWID + " integer primary key autoincrement, "
-			
-			/*
-			 * CHANGE 2:
-			 */
-			// TODO: Place your fields here!
-			// + KEY_{...} + " {type} not null"
-			//	- Key is the column name you created above.
-			//	- {type} is one of: text, integer, real, blob
-			//		(http://www.sqlite.org/datatype3.html)
-			//  - "not null" means it is a required field (must be given a value).
-			// NOTE: All must be comma separated (end of line!) Last one must have NO comma!!
+
 			+ YEAR + " integer not null, "
 			+ MONTH + " text not null, "
 			+ DATE + " integer not null, "
@@ -217,12 +206,7 @@ public class DBAdapter {
 			String photo, int rank, String other) {
 		String where = KEY_ROWID + "=" + rowId;
 
-		/*
-		 * CHANGE 4:
-		 */
-		// TODO: Update data in the row with new fields.
-		// TODO: Also change the function's arguments to be what you need!
-		// Create row's data:
+
 		ContentValues newValues = new ContentValues();
 		newValues.put(YEAR, year);
 		newValues.put(MONTH, month);

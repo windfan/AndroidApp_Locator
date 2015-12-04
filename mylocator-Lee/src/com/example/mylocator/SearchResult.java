@@ -31,8 +31,6 @@ public class SearchResult extends Activity{
 		    	bundle.putString("key_date", "Dec18");
 		    	bundle.putString("key_lat", Double.valueOf(40.771316).toString());
 		    	bundle.putString("key_lng", Double.valueOf(-73.982888).toString());
-		    //	bundle.putString("", "");
-//		    	bundle.putString("key_m", m.getText().toString());
 		    
 		    	intent.putExtras(bundle);
 				startActivity(intent);

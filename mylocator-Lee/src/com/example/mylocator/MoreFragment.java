@@ -33,9 +33,9 @@ public class MoreFragment extends Fragment{
             	Intent intent = new Intent();
             	intent.setClass(getActivity(),Settings.class); //need to change to setting page
             	startActivity(intent);
-//                Toast.makeText(MoreFragment.this.getActivity(), "Settings is clicked!", Toast.LENGTH_SHORT).show();  
             }  
-        });  
+        }); 
+
         myButton2.setOnClickListener(new View.OnClickListener() {  
             
             @Override  
@@ -44,7 +44,6 @@ public class MoreFragment extends Fragment{
             	Intent intent = new Intent();
             	intent.setClass(getActivity(),Qanda.class); //need to change to setting page
             	startActivity(intent);
-//                Toast.makeText(MoreFragment.this.getActivity(), "Q&A is clicked!", Toast.LENGTH_SHORT).show();  
             }  
         });  
         myButton3.setOnClickListener(new View.OnClickListener() {  
@@ -55,11 +54,8 @@ public class MoreFragment extends Fragment{
             	Intent intent = new Intent();
             	intent.setClass(getActivity(),Aboutus.class); //need to change to setting page
             	startActivity(intent);
-//                Toast.makeText(MoreFragment.this.getActivity(), "About us is clicked!", Toast.LENGTH_SHORT).show();  
             }  
-        });  
-
-       
+        });      
           
         return rootView;  
     }  

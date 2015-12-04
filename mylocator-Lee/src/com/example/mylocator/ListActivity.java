@@ -27,7 +27,6 @@ public class ListActivity extends Activity {
       	Bundle bundle= new Bundle();
     	TextView name = (TextView) findViewById(R.id.event_name1);
     	TextView region = (TextView) findViewById(R.id.event_region1);
-//           	TextView m = (TextView) rootView.findViewById(R.id.event_m1);
 
     	bundle.putString("key_name", "Holiday Sing with Orchestra of ST Luke's");
     	bundle.putString("key_region", "Manhattan");
@@ -37,8 +36,6 @@ public class ListActivity extends Activity {
     	bundle.putString("key_lat",Double.valueOf(40.756335).toString());
     	bundle.putString("key_lng", Double.valueOf(-73.997337).toString());
     	
-//    	bundle.putString("key_m", m.getText().toString());
-
     	intent.putExtras(bundle);
 		startActivity(intent);
 

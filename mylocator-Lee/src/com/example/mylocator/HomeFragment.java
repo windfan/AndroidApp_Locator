@@ -41,7 +41,6 @@ public class HomeFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,  
             Bundle savedInstanceState) {  
         final View rootView = inflater.inflate(R.layout.home, container, false);//get the layout file
-//		Toast.makeText(getActivity(), "CLICKED!!!", Toast.LENGTH_SHORT).show();
 		openDB();
 		myDB.insertRow(2014, "Dec", 16, "PM", "12", "25", "Maroon 5 Live @ Brooklyn", "MUSIC", 2, "630 Atlantic Ave, Brooklyn, NY 11217", "Brooklyn", 1, 40.682769, -73.974702, "Maroon 5 just comes to Brooklyn!", 0, "NULL", 2, "dfger");
 		myDB.insertRow(2014, "Dec", 17, "PM", "6", "30", "Holiday Sing with Orchestra of ST Luke's", "MUSIC", 2, "450 West 37th Street, Manhattan, NY 10018", "Manhattan", 1, 40.756351, -73.997316, "Orchestra of St. Luke's popular Holiday Sing returns, bringing voices of the community together in a celebration of the season.", 0, "NULL", 2, "dfger");
@@ -59,11 +58,9 @@ public class HomeFragment extends Fragment{
 		// Query for the record we just added.
 		// Use the ID:
         Cursor cursor1 = myDB.getRow(1);
-//        String testname = cursor1.getString(DBAdapter.COL_NAME);
-		// Reset cursor to start, checking to see if there's data:
 		if (cursor1.moveToFirst()) {
 			do {
-//				// Process the data:
+				// Process the data:
 				//name
 				String name = cursor1.getString(DBAdapter.COL_NAME);
 				TextView testview_name = (TextView) rootView.findViewById(R.id.event_name1);
@@ -103,13 +100,7 @@ public class HomeFragment extends Fragment{
 		closeDB();
 		lat = GPSfunction.getLatitude(); //call GPSfunction to get the value of latitude
 		lng = GPSfunction.getLongitude();//call GPSfunction to get the value of longitude
-//		String lat_string = Double.toString(lat);
 		String lng_string = Double.toString(lng);
-//		TextView view1 = (TextView) rootView.findViewById(R.id.latstring);
-//		view1.setText(lat_string);
-//		TextView view2 = (TextView) rootView.findViewById(R.id.lngstring);
-//		view2.setText(lng_string);
-//		populateListViewFromDB();
         homeButton = (RelativeLayout) rootView.findViewById(R.id.event_frame1);//button for Music 
         homeButton2 = (RelativeLayout)rootView.findViewById(R.id.event_frame2);// button for Art
         homeButton3 = (RelativeLayout)rootView.findViewById(R.id.event_frame3);// button for parade
@@ -129,7 +120,6 @@ public class HomeFragment extends Fragment{
             	TextView time = (TextView) rootView.findViewById(R.id.event_time);
             	TextView date = (TextView) rootView.findViewById(R.id.event_date);
 
- //           	TextView m = (TextView) rootView.findViewById(R.id.event_m1);
 
             	bundle.putString("key_name", name.getText().toString());
             	bundle.putString("key_region", region.getText().toString());
@@ -139,48 +129,16 @@ public class HomeFragment extends Fragment{
             	bundle.putString("key_lat",  Double.valueOf(40.682990).toString());
             	bundle.putString("key_lng", Double.valueOf(-73.974780).toString());
 
-//            	bundle.putString("key_m", m.getText().toString());
-
             	intent.putExtras(bundle);
             	startActivity(intent);
-//                Toast.makeText(HomeFragment.this.getActivity(), "button1 is click! (Music)", Toast.LENGTH_SHORT).show();  
             }  
         }); 		
         return rootView;  
     }
-//	private void populateListViewFromDB() {
-//		Cursor cursor =myDB.getAllRows();
-//		
-//		//allow activity to manage lifetime of the cursor
-//		getActivity().startManagingCursor(cursor);
-//		
-//		
-//		//setup mapping from cursor to view fields
-//		String[] fromFieldNames = new String[]
-//				{DBAdapter.NAME, DBAdapter.REGION_AREA, DBAdapter.HOUR, DBAdapter.MINUTE, DBAdapter.M};
-//		int[] toViewIDs = new int[]
-//				{R.id.event_name, R.id.event_region, R.id.event_hour, R.id.event_minute, R.id.event_m};
-//
-//		
-//		
-//		//create the adapter to may the columns of the DB onto element in UI
-//		SimpleCursorAdapter myCursorAdapter = 
-//				new SimpleCursorAdapter(
-//						getActivity().getApplicationContext(),						//Context
-//						R.layout.eventframe,		//Row layout template
-//						cursor,						//cursor (set to DB records to map)
-//						fromFieldNames,				//DB column name
-//						toViewIDs				//View ID to put information in
-//						);
-//		//set adapter for the list view
-//		ListView  myList = (ListView) getView().findViewById(R.id.listView_home);
-//		myList.setAdapter(myCursorAdapter);
-//	}
-//
+
 	@Override
 	public void onDestroy(){
-		super.onDestroy();
-		
+		super.onDestroy();		
 		closeDB();
 	}
 	

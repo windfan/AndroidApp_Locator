@@ -29,95 +29,74 @@ public class CategoryFragment extends Fragment{
 	//DB
     @Override  
     public View onCreateView(LayoutInflater inflater,    ViewGroup container,  
-            Bundle savedInstanceState) {  
+      Bundle savedInstanceState) {  
         View rootView = inflater.inflate(R.layout.category, container, false);//get the layout file  
-      //get the button from rootView  
+        //get the button from rootView  
         myButton = (Button)rootView.findViewById(R.id.button1);//button for Music 
         myButton2 = (Button)rootView.findViewById(R.id.Button01);// button for Art
         myButton3 = (Button)rootView.findViewById(R.id.Button02);// button for parade
         myButton4 = (Button)rootView.findViewById(R.id.Button03);// button for festival
         myButton5 = (Button)rootView.findViewById(R.id.Button04);// button for family event
-    	File f = new File(DB_PATH + DB_NAME);
-    	
-//    	if (!f.exists()) {
-//    	Toast.makeText(getActivity(), "NO DB!!!!!!!", Toast.LENGTH_SHORT).show();
-//    		eventDB();
-//    	}   	
+    	  File f = new File(DB_PATH + DB_NAME);
 
-
-
-        //myTextView=(TextView) rootView.findViewById(R.id.mytextview);  
-        //  
         myButton.setOnClickListener(new View.OnClickListener() {  
               
-            @Override  
-            public void onClick(View v) {  
-                // TODO Auto-generated method stub  
-            	//myTextView.setText("haha");
-            	/*
-            	Fragment newfragment= new ListFragment();
-            	
-            	FragmentTransaction fragmentTransaction= getFragmentManager().beginTransaction();
-            	
-            	//fragmentTransaction.replace(, newfragment);
-            	fragmentTransaction.addToBackStack(null);
-            	fragmentTransaction.commit();*/
-            	Intent intent = new Intent();
-            	intent.setClass(getActivity(),ListActivity.class);
-            	startActivity(intent);
-//                Toast.makeText(CategoryFragment.this.getActivity(), "button1 is click! (Music)", Toast.LENGTH_SHORT).show();  
-            }  
+          @Override  
+          public void onClick(View v) {  
+            // TODO Auto-generated method stub  
+          	Intent intent = new Intent();
+          	intent.setClass(getActivity(),ListActivity.class);
+          	startActivity(intent);
+          }  
         });  
+
         myButton2.setOnClickListener(new View.OnClickListener() {  
             
-            @Override  
-            public void onClick(View v) {  
-                // TODO Auto-generated method stub
-            	//myTextView.setText("hehe");
-            	Intent intent = new Intent();
-            	intent.setClass(getActivity(),ListActivity.class);
-            	startActivity(intent);
-//            	Toast.makeText(CategoryFragment.this.getActivity(), "button2 is click!(Art)", Toast.LENGTH_SHORT).show();  
-            }  
+          @Override  
+          public void onClick(View v) {  
+            // TODO Auto-generated method stub
+          	Intent intent = new Intent();
+          	intent.setClass(getActivity(),ListActivity.class);
+          	startActivity(intent);
+          }  
         }); 
-       myButton3.setOnClickListener(new View.OnClickListener() {  
+
+        myButton3.setOnClickListener(new View.OnClickListener() {  
             
-            @Override  
-            public void onClick(View v) {  
-                // TODO Auto-generated method stub
-            	//myTextView.setText("hehe");
-            	Intent intent = new Intent();
-            	intent.setClass(getActivity(),ListActivity.class);
-            	startActivity(intent);
-//            	Toast.makeText(CategoryFragment.this.getActivity(), "button3 is click!(Parade)", Toast.LENGTH_SHORT).show();  
-            }  
+          @Override  
+          public void onClick(View v) {  
+              // TODO Auto-generated method stub
+          	Intent intent = new Intent();
+          	intent.setClass(getActivity(),ListActivity.class);
+          	startActivity(intent);
+          }  
         }); 
-       myButton4.setOnClickListener(new View.OnClickListener() {  
+
+        myButton4.setOnClickListener(new View.OnClickListener() {  
            
-           @Override  
-           public void onClick(View v) {  
-               // TODO Auto-generated method stub
-           	//myTextView.setText("hehe");
+          @Override  
+          public void onClick(View v) {  
+            // TODO Auto-generated method stub
            	Intent intent = new Intent();
            	intent.setClass(getActivity(),ListActivity.class);
            	startActivity(intent);
-  //         	Toast.makeText(CategoryFragment.this.getActivity(), "button4 is click!(Festival)", Toast.LENGTH_SHORT).show();  
            }  
-       }); 
-       myButton5.setOnClickListener(new View.OnClickListener() {  
+        }); 
+
+        myButton5.setOnClickListener(new View.OnClickListener() {  
            
-           @Override  
-           public void onClick(View v) {  
-               // TODO Auto-generated method stub
-           	//myTextView.setText("hehe");
+          @Override  
+          public void onClick(View v) {  
+            // TODO Auto-generated method stub
            	Intent intent = new Intent();
            	intent.setClass(getActivity(),ListActivity.class);
            	startActivity(intent);
-  //         	Toast.makeText(CategoryFragment.this.getActivity(), "button5 is click!(Family Event)", Toast.LENGTH_SHORT).show();  
-           }  
-       });        
+          }  
+        });    
+
         return rootView;  
-    }
+      }
+      
 	private void eventDB() {
 		// TODO Auto-generated method stub
 		

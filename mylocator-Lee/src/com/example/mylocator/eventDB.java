@@ -33,7 +33,6 @@ import android.content.res.AssetManager;
 public class eventDB extends Activity{
 	//DB
 	String DB_PATH = "/data" + Environment.getDataDirectory().getAbsolutePath() + "/com.example.mylocator/databases" ;
-	//String DB_PATH = "/data/data/com.example.mylocator/databases" ;
 	String DB_NAME = "LocatorDB.db";
 	//DB
 	
@@ -42,45 +41,32 @@ public class eventDB extends Activity{
     	
     	if ((new File(DB_PATH+DB_NAME)).exists() == false) {
     		
-//    		Toast.makeText(getActivity(), "NO DATABASE, PREPARING~~", Toast.LENGTH_SHORT).show();
     		
     		File fl = new File(DB_PATH);
     		
     		if (!fl.exists()) {
-//    			Toast.makeText(getActivity(), "SETTING DIRECTORY~~", Toast.LENGTH_SHORT).show();
     			fl.mkdir();
     		}
 
     		try {
-//    			Toast.makeText(getActivity(), "SETTING DB COPY~~", Toast.LENGTH_SHORT).show();
-    			//InputStream is = getActivity().openFileInput(DB_NAME);
+
     			InputStream is = getAssets().open(DB_NAME);
-    					
-    			
-    			
-//    			Toast.makeText(getActivity(), "DB COPYING~~", Toast.LENGTH_SHORT).show();
-    			
+    					    			
     			OutputStream os = new FileOutputStream(DB_PATH + DB_NAME);
-//    			Toast.makeText(getActivity(), "SETTING DB FILE~~", Toast.LENGTH_SHORT).show();
     			
     			byte[] buffer = new byte[1024];
     			int length;
     			while ((length = is.read(buffer)) > 0) {
     				os.write(buffer, 0, length);
-//    				Toast.makeText(getActivity(), "SETTING DB Writing~~", Toast.LENGTH_SHORT).show();
     			}
 
     			
     			os.flush();
     			os.close();
     			is.close();
-//    			Toast.makeText(getActivity(), "DATABASE PREPARED!!!", Toast.LENGTH_SHORT).show();
     		} catch (Exception e) {
     			e.printStackTrace();
     		}
-    	} else {
-//    		Toast.makeText(getActivity(), "DATABASE EXITS~ >.^", Toast.LENGTH_SHORT).show();
-    	}
-    	
+    	} 	
     }
 }
